@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 # extende los max_length 
 # error method POST fechas -- no enlista las FECHAS citas
 # incluir una CLASS CATEGORIA ----------->>>
