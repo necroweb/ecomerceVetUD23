@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import Producto
-from .models import Cliente 
-from .models import Carrito
-from .models import Categoria
+from .models import Producto, Cliente, Carrito, Categoria
 
 # Register your models here.
 admin.site.register(Producto)

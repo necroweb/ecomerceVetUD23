@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.instagram',
     'allauth.socialaccount.providers.twitch',
-    
+    'rest_framework',    
 ]
 
 MIDDLEWARE = [
