@@ -30,7 +30,7 @@ class Producto(models.Model):
     precioVenta = models.IntegerField( null=True)
     proveedor = models.CharField(max_length=50, default='')
     existencia = models.BooleanField(null=True)
-    
+    image = models.ImageField(upload_to='imagesProducto/', default='')
     
     def __str__(self):
         return f'Producto ({self.id}): {self.nameProducto} {self.precioVenta}'
