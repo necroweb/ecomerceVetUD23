@@ -17,13 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include 
+from orders import views 
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('orders/', include('orders.urls', namespace="orders"))
-     
+    path('orders/', include('orders.urls', namespace="orders")),
+    path('', views.home, name="home"),
+
+    
 ]
+
+
 
 

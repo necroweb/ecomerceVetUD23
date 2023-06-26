@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>List Producto</title>
+
+  <!-- Add additional CSS in static file -->
+ 
+</head>
+
+<body>
+  <h1>home</h1>  
+  {% for producto in productos %}
+    
+    <h2>{{producto.nameProducto}}</h2>
+    <p>{{producto.precioVenta}}</p>
+    <img src="{{Producto.image.url}}" alt=""/>
+    
+    {% endfor %}
+  </body>
+
+</html>

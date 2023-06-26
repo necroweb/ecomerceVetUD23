@@ -1,5 +1,4 @@
 from django.urls import re_path
-from . import views
 from .views import ProductoListApi, OrdersCreateAPIView
 
 app_name = 'orders'
