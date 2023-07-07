@@ -2,25 +2,65 @@
 <html lang="en">
 
 <head>
-
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>List Producto</title>
-
-  <!-- Add additional CSS in static file -->
- 
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  
 </head>
 
 <body>
-  <h1>home</h1>  
-  {% for producto in productos %}
+ <!--navegador -->   
+  <!-- Just an image -->
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+  <a class="navbar-brand" href="#">
+    <img src="img/pets_FILL0_wght400_GRAD0_opsz48greenlight" width="50" height="50" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">HOME </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">AGENDA</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">SERVICIOS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">REGISTRESE</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+</nav>   
+ <!--navegador-->  
+ 
+ <!---->
     
-    <h2>{{producto.nameProducto}}</h2>
-    <p>{{producto.precioVenta}}</p>
-    <img src="{{Producto.image.url}}" alt=""/>
+<div class="container-fluid " >
     
+  <div class="row justify-content-around">
+    
+    {% for producto in productos %}
+    <div class="card mb-3 col-6-xl col-4-lg col-6-md col-10-sm mt-5 " style="width: 22rem;">
+      <img src="{{producto.image.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{producto.nameProducto}}</h5>
+        <p class="card-text">{{producto.desProducto}</p>
+        <a href="#" class="btn btn-primary">{{producto.precioVenta}</a>
+      </div>
+      
+    </div>
     {% endfor %}
-  </body>
+  </div>
+    
+</div> 
+
+</body>
+
 
 </html>

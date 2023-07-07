@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-#import os 
+import os 
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,13 +33,13 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth', # no funcione model .auth
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'orders',
-    'django.contrib.sites',  # para allauth
+    'django.contrib.sites',  # para allauth account
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.instagram',
     'allauth.socialaccount.providers.twitch',
     'rest_framework', 
+    'bootstrap5',
    
 ]
 
@@ -128,12 +130,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-MEDIA_ROOT = BASE_DIR / 'media'
-#STATICFILES_DIRS = [
-    #os.path.join('static'),
-#]
 
+STATIC_URL = "static/"
+
+# config static and media URL 
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -155,3 +160,7 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+
+# url static media
+
+
